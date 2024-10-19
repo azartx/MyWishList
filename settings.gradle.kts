@@ -32,6 +32,7 @@ include(":composeApp")
 include(":server")
 
 include(":components:common:core")
+include(":components:common:arch")
 
 include(":components:api:login_api")
 

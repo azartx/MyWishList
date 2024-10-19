@@ -4,8 +4,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.jetbrainsCompose)
 }
 
 kotlin {
@@ -24,22 +22,13 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.components.api.loginApi)
-            implementation(projects.components.common.arch)
-
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material)
-
-            implementation(libs.koin.core)
-
-            implementation(libs.androidx.navigation.compose)
+            api(libs.androidx.lifecycle.viewmodel)
         }
     }
 }
 
 android {
-    namespace = "com.solo4.mywishlist.login"
+    namespace = "com.solo4.mywishlist.arch"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

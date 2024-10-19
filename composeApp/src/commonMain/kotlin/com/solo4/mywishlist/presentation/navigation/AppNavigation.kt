@@ -5,7 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.solo4.mywishlist.login.presentation.navigation.LoginRoute
-import com.solo4.mywishlist.login.screen.LoginScreen
+import com.solo4.mywishlist.login.presentation.screen.login.LoginScreen
 
 @Composable
 fun AppNavigation(navHostController: NavHostController) {

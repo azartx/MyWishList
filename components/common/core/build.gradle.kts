@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsCompose)
 }
 
 kotlin {
@@ -22,7 +23,13 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(projects.components.common.arch)
+
+            implementation(compose.runtime)
+
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.androidx.navigation.compose)
         }
     }
 }

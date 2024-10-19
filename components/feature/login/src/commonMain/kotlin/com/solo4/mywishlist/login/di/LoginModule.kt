@@ -7,4 +7,6 @@ import org.koin.dsl.module
 
 val loginModule = module {
     factory { LoginDestinationImpl(get()) } bind LoginDestination::class
+
+    includes(viewModelModule, reducerModule, factoryModule)
 }
