@@ -9,10 +9,11 @@ import kotlinx.coroutines.launch
 abstract class MviViewModel<
         Intent : MviIntent,
         State : MviState,
+        Reducer : MviReducer<Intent, State, OutEffect>,
         OutEffect : MviOutEffect
-        > : ViewModel() {
-
-    abstract val reducer: MviReducer<Intent, State, OutEffect>
+        >(
+    private val reducer: Reducer
+) : ViewModel() {
 
     val state: StateFlow<State> = reducer.state
 

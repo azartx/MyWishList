@@ -7,8 +7,8 @@ import com.solo4.mywishlist.login.presentation.screen.login.mvi.LoginReducer
 import com.solo4.mywishlist.login.presentation.screen.login.mvi.LoginState
 
 class LoginViewModel(
-    override val reducer: LoginReducer
-) : MviViewModel<LoginIntent, LoginState, LoginOutEffect>() {
+    reducer: LoginReducer
+) : MviViewModel<LoginIntent, LoginState, LoginReducer, LoginOutEffect>(reducer) {
 
     fun onNicknameFieldUpdated(nickname: String) {
         sendIntent(LoginIntent.UpdateNickname(nickname))
